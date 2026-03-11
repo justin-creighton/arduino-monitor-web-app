@@ -1,0 +1,8 @@
+<div class="sensor-container">
+  <div class="sensor-card" *ngFor="let sensorGroup of sensorData | keyvalue">
+    <h3>{{ sensorGroup.key }}</h3>
+    <div class="list-item" *ngFor="let sensor of sensorGroup.value | keyvalue">
+      <div id="name"><strong>{{ sensor.key }}</strong></div><div>: {{ sensor.value }}</div>
+    </div>
+  </div>
+</div>
