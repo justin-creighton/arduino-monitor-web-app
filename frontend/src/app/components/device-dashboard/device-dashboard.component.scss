@@ -1,0 +1,27 @@
+.device-container {
+  margin-top: 4rem;
+
+  .device-monitors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    .item {
+      margin: 0 auto;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      width: 24rem;
+      text-align: left;
+    }
+  }
+}
+
+.floor {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgb(13 155 255 / 70%);
+  border: 1px solid #fff;
+  transform: rotateX(-90deg) translateZ(-130px) translateX(-120px);
+}

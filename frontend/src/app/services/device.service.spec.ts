@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SensorService } from './sensor.service';
+import { SensorService } from './device.service';
 
 describe('SensorService', () => {
   let service: SensorService;

@@ -14,7 +14,7 @@ const io = new Server(server, {
 
 export { io };
 
-io.on('sensor-update', (socket) => {
+io.on('data-updated', (socket) => {
   console.log('Client connected:', socket.id);
 });
 

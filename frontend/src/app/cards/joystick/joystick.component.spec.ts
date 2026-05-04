@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SensorDashboardComponent } from './sensor-dashboard.component';
+import { JoystickComponent } from './joystick.component';
 
-describe('SensorDashboardComponent', () => {
-  let component: SensorDashboardComponent;
-  let fixture: ComponentFixture<SensorDashboardComponent>;
+describe('JoystickComponent', () => {
+  let component: JoystickComponent;
+  let fixture: ComponentFixture<JoystickComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SensorDashboardComponent]
+      imports: [JoystickComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SensorDashboardComponent);
+    fixture = TestBed.createComponent(JoystickComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

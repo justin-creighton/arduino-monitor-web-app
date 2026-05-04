@@ -1,0 +1,63 @@
+.scene {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto 10px auto;
+  perspective: 800px;
+  /* 👈 3D depth */
+}
+
+/* When "flat" mode is ON */
+.scene.flat {
+  perspective: none;
+  /* 👈 removes depth → looks 2D */
+}
+
+.cube {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(30deg);
+  transition: transform 0.5s ease;
+}
+
+/* Cube faces */
+.face {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgb(0 0 0 / 89%);
+  border: 4px solid #00fdff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+/* Position each face in 3D space */
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}

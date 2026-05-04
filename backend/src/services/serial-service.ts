@@ -5,8 +5,6 @@ import { io } from '../server';
 import { serialConfig } from "../configs/serial-config";
 import { parseArduinoData } from "../utils/parser";
 
-let latestData: Record<string, any> = {};
-
 const port = new SerialPort({
   path: serialConfig.port,
   baudRate: serialConfig.baudRate
@@ -24,23 +22,9 @@ port.on("open", () => {
 });
 
 parser.on("data", (data: string) => {
-  console.log("Raw Arduino:", data);
+  const parsedData = parseArduinoData(data);
 
-  const parsed = parseArduinoData(data);
-
-  if (parsed) {
-    upsertPorperties(parsed);
-    console.log("Parsed:", parsed);
-    io.emit('sensor-update', latestData);
+  if (parsedData) {
+    io.emit('data-updated', parsedData);
   }
 });
-
-function upsertPorperties(parsed: any) {
-  if (!latestData[parsed.sensorName]) {
-    latestData[parsed.sensorName] = parsed.properties;
-  } else {
-    Object.keys(parsed.properties).forEach((property: any) => {
-      latestData[parsed.sensorName][property] = parsed.properties[property];
-    })
-  }
-}

@@ -3,18 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SensorDashboardComponent } from './components/sensor-dashboard/sensor-dashboard.component';
+import { DeviceDashboardComponent } from './components/device-dashboard/device-dashboard.component';
+import { ImuComponent } from './cards/imu/imu.component';
+import { IrComponent } from './cards/ir/ir.component';
+import { PotentiometerComponent } from './cards/potentiometer/potentiometer.component';
+import { JoystickComponent } from './cards/joystick/joystick.component';
+import { UltrasonicComponent } from './cards/ultrasonic/ultrasonic.component';
 import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SensorDashboardComponent
+    DeviceDashboardComponent,
   ],
   imports: [
     RouterOutlet,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ImuComponent,
+    IrComponent,
+    PotentiometerComponent,
+    JoystickComponent,
+    UltrasonicComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

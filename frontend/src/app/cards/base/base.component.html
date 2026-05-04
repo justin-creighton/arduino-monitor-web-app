@@ -1,0 +1,7 @@
+<div class="device-card">
+    <h3>Device name: {{ formattedData.deviceName }}</h3>
+    <div class="list-item" *ngFor="let property of formattedData.properties | keyvalue">
+        <div id="name"><strong>{{ property.key }}:</strong></div>
+        <div>{{ property.value }}</div>
+    </div>
+</div>

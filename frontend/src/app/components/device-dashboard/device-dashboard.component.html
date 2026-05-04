@@ -1,0 +1,11 @@
+<div class="device-container">
+  <div class="device-monitors" *ngIf="!loading">
+    <div class="item" *ngFor="let deviceData of formattedData">
+      <app-imu [formattedData]="deviceData" *ngIf="deviceData.deviceType === deviceTypes.IMU"></app-imu>
+      <app-ir [formattedData]="deviceData" *ngIf="deviceData.deviceType === deviceTypes.IR"></app-ir>
+      <app-joystick [formattedData]="deviceData" *ngIf="deviceData.deviceType === deviceTypes.ANALOG"></app-joystick>
+      <app-potentiometer [formattedData]="deviceData" *ngIf="deviceData.deviceType === deviceTypes.POT"></app-potentiometer>
+      <app-ultrasonic [formattedData]="deviceData" *ngIf="deviceData.deviceType === deviceTypes.ULTRA"></app-ultrasonic>
+    </div>
+  </div>
+</div>
